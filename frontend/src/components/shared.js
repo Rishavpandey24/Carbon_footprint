@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { BarChart, Bar, LineChart, Line, PieChart, Pie, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
-const API_BASE_URL = "https://ecovision-backend.onrender.com/api";
+const API_BASE_URL = "https://ecovision-backend-vhmp.onrender.com/api";
 
 // Reusable Card Component
 const Card = ({ title, children, className = '' }) => (
