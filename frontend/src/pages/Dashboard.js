@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Card, ProgressBar } from '../components/shared';
 import { EmissionBreakdownChart, EmissionTrendChart } from '../components/Charts';
 
-const API_BASE_URL = 'http://localhost:8000/api';
+const API_BASE_URL = 'https://ecovision-backend-vhmp.onrender.com/api';
 
 function Dashboard() {
   const [footprint, setFootprint] = useState(null);

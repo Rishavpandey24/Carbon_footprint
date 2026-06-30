@@ -3,8 +3,7 @@ import axios from 'axios';
 import { Card } from '../components/shared';
 import { LeaderboardEntry } from '../components/Cards';
 
-const API_BASE_URL = 'http://localhost:8000/api';
-
+const API_BASE_URL = 'https://ecovision-backend-vhmp.onrender.com/api';
 function Leaderboard() {
   const [leaderboard, setLeaderboard] = useState(null);
   const [globalStats, setGlobalStats] = useState(null);
