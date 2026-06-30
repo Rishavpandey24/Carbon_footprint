@@ -8,12 +8,9 @@ from app.routes import (
     leaderboard_routes
 )
 
-from config import (
-    ALLOWED_ORIGINS,
-    API_HOST,
-    API_PORT
-)
+from config import API_HOST, API_PORT
 
+# Create database tables
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI(
@@ -22,14 +19,15 @@ app = FastAPI(
     version="1.0.0"
 )
 
-# CORS
+# -------------------- CORS --------------------
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=ALLOWED_ORIGINS,
-    allow_credentials=False,   # Important when using ["*"]
+    allow_origin_regex=r"https://.*\.vercel\.app",
+    allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+# ----------------------------------------------
 
 # Routes
 app.include_router(

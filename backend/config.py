@@ -1,33 +1,16 @@
-# Configuration for EcoVision Backend
-
 import os
 from dotenv import load_dotenv
 
 load_dotenv()
 
-# -----------------------------
-# Database Configuration
-# -----------------------------
 DATABASE_URL = os.getenv(
     "DATABASE_URL",
     "sqlite:///./ecovision.db"
 )
 
-# -----------------------------
-# API Configuration
-# -----------------------------
 API_HOST = "0.0.0.0"
 API_PORT = int(os.getenv("PORT", 10000))
 
-# -----------------------------
-# CORS Configuration
-# -----------------------------
-# Allow all origins (good for testing/demo)
-ALLOWED_ORIGINS = ["*"]
-
-# -----------------------------
-# Carbon Emission Factors
-# -----------------------------
 EMISSION_FACTORS = {
     "car": 0.21,
     "public_transport": 0.05,
