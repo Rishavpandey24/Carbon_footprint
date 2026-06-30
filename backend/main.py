@@ -22,14 +22,16 @@ app = FastAPI(
     version="1.0.0"
 )
 
+# CORS
 app.add_middleware(
     CORSMiddleware,
     allow_origins=ALLOWED_ORIGINS,
-    allow_credentials=True,
+    allow_credentials=False,   # Important when using ["*"]
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
+# Routes
 app.include_router(
     footprint_routes.router,
     prefix="/api/footprint",

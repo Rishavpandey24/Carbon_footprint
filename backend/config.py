@@ -8,11 +8,13 @@ load_dotenv()
 # -----------------------------
 # Database Configuration
 # -----------------------------
-DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///./ecovision.db")
+DATABASE_URL = os.getenv(
+    "DATABASE_URL",
+    "sqlite:///./ecovision.db"
+)
 
 # -----------------------------
 # API Configuration
-# Render provides PORT automatically
 # -----------------------------
 API_HOST = "0.0.0.0"
 API_PORT = int(os.getenv("PORT", 10000))
@@ -20,11 +22,8 @@ API_PORT = int(os.getenv("PORT", 10000))
 # -----------------------------
 # CORS Configuration
 # -----------------------------
-ALLOWED_ORIGINS = [
-    "http://localhost:3000",
-    "http://127.0.0.1:3000",
-    "https://carbon-footprint-plum-five.vercel.app"
-]
+# Allow all origins (good for testing/demo)
+ALLOWED_ORIGINS = ["*"]
 
 # -----------------------------
 # Carbon Emission Factors
